@@ -1,0 +1,12 @@
+﻿{
+    "version":  "0.1.0",
+    "date":  "2026-10-17",
+    "compiledPlayerCommit":  "16a42bd5a024a8ab492afe6c59afccd6956d648f",
+    "playerSHA256":  "D15ECAC5A8466389368E4CF83259CB6DB9D7F4E052FB1F8BD30786AEF2627F11",
+    "headsetSmokeTest":  "Earlier player received positive headset feedback. This standalone binary has automated startup validation only.",
+    "headlessSeconds":  240,
+    "scheduledStop":  true,
+    "fullPlaythroughVerified":  false,
+    "maximumResolutionScale":  200,
+    "automaticBaseAndUpdateImportVerified":  true
+}

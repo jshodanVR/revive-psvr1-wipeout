@@ -1,4 +1,4 @@
-# Create a clean player ZIP from an explicitly accepted build. Never package user data.
+# Create a clean player ZIP from an recorded and verified build. Never package user data.
 [CmdletBinding()]
 param([ValidatePattern('^[0-9]+\.[0-9]+\.[0-9]+$')][string]$Version='0.1.0')
 $ErrorActionPreference='Stop'
@@ -6,9 +6,9 @@ $root=Split-Path -Parent $PSScriptRoot
 $record=Get-Content -LiteralPath (Join-Path $root "docs/releases/v$Version-build.json") -Raw | ConvertFrom-Json
 if ($record.version -ne $Version) { throw 'Release record version mismatch.' }
 $player=Join-Path $root 'pc-vr-tests/Wipeout/shadps4.exe'
-if ((Get-FileHash -LiteralPath $player).Hash -ne $record.playerSHA256) { throw 'The player differs from the accepted release build.' }
+if ((Get-FileHash -LiteralPath $player).Hash -ne $record.playerSHA256) { throw 'The player differs from the recorded release build.' }
 $sourceChanges=& git -C $root diff $record.compiledPlayerCommit -- shadps4-arm64-main
-if ($LASTEXITCODE -ne 0 -or $sourceChanges) { throw 'Emulator source differs from the accepted player revision.' }
+if ($LASTEXITCODE -ne 0 -or $sourceChanges) { throw 'Emulator source differs from the recorded player revision.' }
 $commit=(& git -C $root rev-parse HEAD).Trim()
 if ($LASTEXITCODE -ne 0) { throw 'Cannot identify the packaging commit.' }
 $dirty=& git -C $root status --porcelain
@@ -65,7 +65,7 @@ foreach ($file in $tracked) {
 }
 $manifest=[ordered]@{
     product='RevivePSVR1 - Wipeout'; version=$Version; releaseTag="v$Version"
-    repository='https://github.com/jshodanVR/revive-psvr1-statik'
+    repository='https://github.com/jshodanVR/revive-psvr1-wipeout'
     packagingCommit=$commit; compiledPlayerCommit=$record.compiledPlayerCommit
     playerSHA256=$record.playerSHA256; headsetSmokeTest=$record.headsetSmokeTest
     fullPlaythroughVerified=$false; defaultResolutionScale=100; enhancedDefault=$false
