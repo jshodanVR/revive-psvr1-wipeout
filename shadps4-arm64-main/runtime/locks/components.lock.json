@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "components": [
+    {
+      "name": "bachata-xserver",
+      "url": "https://github.com/JICA98/bachata-xserver.git",
+      "revision": "80e65f396e20efe819e499be225b94c445bfda34",
+      "license": "LGPL-2.1"
+    },
+    {
+      "name": "libadrenotools",
+      "url": "https://github.com/JICA98/libadrenotools.git",
+      "revision": "7db3328e8d5e4762bcdf91c0279d32a52223899e",
+      "license": "BSD-2-Clause"
+    },
+    {
+      "name": "glibc-packages",
+      "url": "https://github.com/termux-pacman/glibc-packages.git",
+      "revision": "26d89ba7a1f856b99f0d437bef54f558b2485075",
+      "license": "mixed"
+    },
+    {
+      "name": "mesa",
+      "url": "https://gitlab.freedesktop.org/mesa/mesa.git",
+      "revision": "6984e91b5fe1d1c204e54954a4282fcdc0c44b78",
+      "license": "MIT"
+    },
+    {
+      "name": "fex",
+      "url": "https://github.com/FEX-Emu/FEX.git",
+      "revision": "f2b679f6028ce1c38875233aecfcf5d3f8ebecec",
+      "license": "MIT"
+    },
+    {
+      "name": "vortek-client",
+      "url": "https://github.com/JICA98/vortek.git",
+      "revision": "9325b6060fc1c690234e102fcbbb1e0283b8892e",
+      "license": "LGPL-2.1",
+      "sourceDestination": "runtime/sources/vortek-client",
+      "buildOutput": "host/lib/libvulkan_vortek.so"
+    },
+    {
+      "name": "vortek-server",
+      "url": "https://github.com/JICA98/vortek.git",
+      "revision": "df8183df5c2b024f116a5f796a9e4147aa696cd0",
+      "license": "LGPL-2.1",
+      "sourceDestination": "runtime/sources/vortek-server",
+      "sourcedFrom": "bachata-server branch"
+    }
+  ]
+}

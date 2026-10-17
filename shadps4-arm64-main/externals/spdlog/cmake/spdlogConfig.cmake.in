@@ -1,0 +1,15 @@
+# Copyright(c) 2019 spdlog authors
+# Distributed under the MIT License (http://opensource.org/licenses/MIT)
+
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+find_package(Threads REQUIRED)
+
+find_dependency(fmt CONFIG)
+
+set(config_targets_file @config_targets_file@)
+include("${CMAKE_CURRENT_LIST_DIR}/${config_targets_file}")
+
+check_required_components(spdlog)

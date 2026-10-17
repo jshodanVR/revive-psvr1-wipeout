@@ -1,0 +1,4 @@
+WIPEOUT SUPPORT
+
+See README.md, CONTROLS.md, SAVES.md and KNOWN-ISSUES.md for setup and limitations.
+Use Collect PCVR Logs.bat to collect local diagnostics. Nothing is uploaded automatically.

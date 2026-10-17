@@ -1,0 +1,4 @@
+# Scripts run by Git Bash need LF line endings, also in a checkout on Windows.
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf

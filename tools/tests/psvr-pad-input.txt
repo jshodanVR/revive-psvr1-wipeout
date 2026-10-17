@@ -1,0 +1,6 @@
+0 1800 head=0,0,0 pad=0,-0.17,-0.5 worn=1
+12 0.25 cross
+22 0.25 cross
+32 0.25 cross
+42 0.25 cross
+52 0.25 cross
